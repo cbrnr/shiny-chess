@@ -112,13 +112,14 @@ server <- function(input, output, session) {
     })
     
     output$plot <- renderPlot({
+        main <- unlist(strsplit(names(unlist(measures))[measure()], ".", fixed=TRUE))[2]
         d <- density(data(), na.rm=TRUE)
         hist(
             x=data(),
             freq=FALSE,
             xlab=NULL,
             ylab=NULL,
-            main=colnames(df)[measure()],
+            main=main,
             yaxt="n",
             border="white",
             ylim=c(0, max(d$y))
