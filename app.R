@@ -3,7 +3,9 @@ library(shinyjs)
 library(bslib)
 library(tibble)
 library(thematic)
+library(ragg)
 
+options(shiny.useragg=TRUE)
 thematic_shiny(font="auto")
 
 df <- read.csv("chess.csv", row.names=1, check.names=FALSE)
