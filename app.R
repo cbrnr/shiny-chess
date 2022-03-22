@@ -50,7 +50,7 @@ ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
             useShinyjs(),
-            disabled(textInput("id", "ID", value="w28hed")),
+            disabled(textInput("id", "ID", value="")),
             selectInput("measure", "Measure", choices=measures),
             htmlOutput("sample"),
             img(src="chess.png", width="50%"),
@@ -103,8 +103,9 @@ server <- function(input, output, session) {
             "This website shows your individual results relative to all ", n, " chess ",
             "players participating in the ",
             r"(<a href="https://chess-study.uni-graz.at/en/">Development of Chess )",
-            "Expertise</a> study so far. This feedback does not represent a formal ",
-            "psychological assessment of any kind."
+            "Expertise</a> study so far. Please keep in mind that the results are only a ",
+            "momentary assessment at that specific time and that the feedback does not ",
+            "represent a formal psychological assessment of any kind."
         )
     })
     
